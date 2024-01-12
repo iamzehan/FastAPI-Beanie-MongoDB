@@ -12,7 +12,4 @@ app.include_router(BlogRouter, tags=["Blog Posts"], prefix="/blogs")
 async def start_db():
     await init_db()
     
-@app.get("/root", tags=["Root"])
-async def read_root() -> dict:
-    return {"message": "This is Beanie Powered App!"}
 
