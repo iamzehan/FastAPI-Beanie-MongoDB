@@ -2,6 +2,8 @@ from typing import List
 from urllib.parse import unquote
 from fastapi import APIRouter, HTTPException
 from server.models.blog_post import Article, Comments
+from beanie import PydanticObjectId
+from bson import ObjectId
 
 router = APIRouter()
 
@@ -22,12 +24,11 @@ async def get_blogs_by_author(author: str) -> List[Article]:
 
 @router.post("/comments/create/")
 async def add_a_comment(comment: Comments) -> dict:
-    comment = await comment.create()
-
+    post = await comment.create()
     return {"message": "Comment posted successfully!",
-            "comment": comment}
+            "comment": post}
     
 @router.get("/comments/read/article_id={article_id}")
 async def read_all_comments(article_id: str) -> List[Comments]:
-    comments = await Comments.find({"article_id": unquote(article_id)},sort=[("date", -1)]).to_list()
+    comments = await Comments.find({"article_id": PydanticObjectId(article_id)},sort=[("date", -1)]).to_list()
     return comments
