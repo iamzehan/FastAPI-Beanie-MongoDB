@@ -1,7 +1,7 @@
-from beanie import Document
+from beanie import Document, PydanticObjectId
 from datetime import datetime
 from typing import Optional
-from bson import ObjectId
+
 class Article(Document):
     title: str
     content: str
@@ -23,7 +23,7 @@ class Article(Document):
     }
         
 class Comments(Document):
-    article_id: str
+    article_id: PydanticObjectId
     content: str
     date: Optional[datetime] = datetime.now()
     owner: str
@@ -34,7 +34,7 @@ class Comments(Document):
     model_config = {
         "json_schema_extra":{
             "examples": [{
-                "article_id" : "65a15a201b77ea7ebddb90c3",
+                "article_id": "_id",
                 "content": "Why do we use Beanie?",
                 "owner" : "ziaul"
             }]
