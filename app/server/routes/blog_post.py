@@ -22,6 +22,11 @@ async def get_blogs_by_author(author: str) -> List[Article]:
     
     return posts
 
+@router.get("/read/id={id}")
+async def read_a_blog(id: PydanticObjectId) -> Article:
+    blog = await Article.get(id)
+    return blog
+
 @router.post("/comments/create/")
 async def add_a_comment(comment: Comments) -> dict:
     post = await comment.create()
