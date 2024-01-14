@@ -1,7 +1,7 @@
 from typing import Optional
 from beanie import Document
 from fastapi.security import OAuth2PasswordBearer
-from pydantic import EmailStr
+from pydantic import EmailStr, BaseModel
 
 oauth2_scheme = OAuth2PasswordBearer(tokenUrl="token")
 
@@ -33,3 +33,7 @@ class User(Document):
     }
 class UserInDB(User):
     password : str
+
+class UserLogin(BaseModel):
+    username: str
+    password: str
