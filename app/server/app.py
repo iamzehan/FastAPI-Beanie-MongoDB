@@ -2,7 +2,7 @@ from fastapi import FastAPI
 from server.database import init_db
 from server.routes.product_review import router as ReviewRouter
 from server.routes.blog_post import router as BlogRouter
-from app.server.routes.user import router as UserRouter
+from server.routes.user import router as UserRouter
 
 
 app = FastAPI(docs_url="/")
