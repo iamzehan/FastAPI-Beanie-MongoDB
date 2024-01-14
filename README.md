@@ -2,8 +2,8 @@
 ## How to create FastAPI with MongoDB?
 ___
 
-<h1 align="center"> 
-FastAPI <img src="https://raw.githubusercontent.com/gilbarbara/logos/main/logos/fastapi-icon.svg" alt="html5" width="40" height="40"/> + Beanie <img src="https://beanie-odm.dev/assets/logo.svg" alt="html5" width="40" height="40"/> + MongoDB <img src="https://raw.githubusercontent.com/gilbarbara/logos/main/logos/mongodb-icon.svg" alt="html5" width="40" height="40"/>
+<h1 align="center" style="vertical-align:middle"> 
+FastAPI <img src="https://raw.githubusercontent.com/gilbarbara/logos/main/logos/fastapi-icon.svg" alt="html5" width="40" height="40" style="vertical-align:middle" /> + Beanie <img src="https://beanie-odm.dev/assets/logo.svg" alt="html5" width="40" height="40" style="vertical-align:middle"/> + MongoDB <img src="https://raw.githubusercontent.com/gilbarbara/logos/main/logos/mongodb-icon.svg" alt="html5" width="40" height="40" style="vertical-align:middle"/>
 </h1>
 
 ## Here's the directory structure
