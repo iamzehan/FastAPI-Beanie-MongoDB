@@ -6,8 +6,8 @@ from jose import jwt, JWTError
 from typing import Union, Any, Annotated
 from datetime import datetime, timedelta
 
-from user import User, UserInDB
-from token_model import Token, TokenData
+from auth.user import User, UserInDB
+from auth.token_model import Token, TokenData
 
 from passlib.context import CryptContext
 from fastapi import Depends, HTTPException, status
