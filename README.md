@@ -45,7 +45,8 @@ Contains files that define the structure of your database documents.
 ___
 Handles all the requests and responses
 
-![Alt text](image.png)
+![image](https://github.com/iamzehan/FastAPi-Beanie-MongoDB/assets/43857150/f6831da1-728d-4b5d-98cd-425aa1b09b2f)
+
 
 ### `app.py`
 ___
