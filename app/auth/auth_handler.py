@@ -76,7 +76,6 @@ async def get_current_user(token: Annotated[str, Depends(oauth2_scheme)]):
         raise credentials_exception
     # then it gets the user from the database by separating username from the token data
     user = await get_user(db=User, username=token_data.username)
-    print("-----------------", user)
     if user is None:
         raise credentials_exception
     return user
