@@ -1,9 +1,8 @@
 from typing import Optional
 from beanie import Document
-from fastapi.security import OAuth2PasswordBearer
 from pydantic import EmailStr, BaseModel
 
-oauth2_scheme = OAuth2PasswordBearer(tokenUrl="token")
+
 
 class User(Document):
 
@@ -13,10 +12,13 @@ class User(Document):
 
     full_name: Optional[str] = None
     
-    disabled: Optional[bool] = None
+    disabled: Optional[bool] = False
     
     class Settings:
         name = "users_collection"
+    
+class UserInDB(User):
+    password : str = "ExamplePassword"
     
     model_config = {
         "json_schema_extra":{
@@ -25,15 +27,24 @@ class User(Document):
                 "username": "iamzehan",
                 "email": "zehan@example.com",
                 "full_name": "Md. Ziaul Karim",
-                "password" : "12345",
-                "diabled" : False
+                "diabled" : False,
+                "password" : "12345"
                 }
             ]
         }
     }
-class UserInDB(User):
-    password : str
+    
+class UserSignUp(BaseModel):
+    username: str
 
+    email: Optional[EmailStr] = None
+
+    full_name: Optional[str] = None
+    
+    disabled: Optional[bool] = False
+    
+    password : str
+    
 class UserLogin(BaseModel):
     username: str
     password: str
