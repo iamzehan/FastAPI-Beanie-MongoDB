@@ -1,6 +1,6 @@
 from beanie import init_beanie
 import motor.motor_asyncio
-from app.auth.auth_user import User
+from auth.auth_user import User
 from server.models.blog_post import Article, Comments
 from server.models.product_review import ProductReview
 
