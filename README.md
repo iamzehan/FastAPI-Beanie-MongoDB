@@ -14,9 +14,9 @@ ___
 │   ├── __init__.py
 │   ├── main.py
 │   ├── auth
-│       ├── auth_handler.py
-│       ├── token_model.py
-│       └── user.py
+│   │   ├── auth_handler.py
+│   │   ├── auth_token.py
+│   │   └── auth_user.py
 │   └── server
 │       ├── app.py
 │       ├── database.py
