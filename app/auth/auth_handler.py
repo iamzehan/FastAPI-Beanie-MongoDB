@@ -6,8 +6,8 @@ from jose import jwt, JWTError
 from typing import Union, Any, Annotated
 from datetime import datetime, timedelta
 
-from app.auth.auth_user import User, UserInDB
-from app.auth.auth_token import TokenData
+from auth.auth_user import User, UserInDB
+from auth.auth_token import TokenData
 
 from passlib.context import CryptContext
 from fastapi import Depends, HTTPException, status
@@ -27,7 +27,7 @@ JWT_REFRESH_SECRET_KEY = os.environ['REFRESH_SECRET_KEY']
 
 # this is an instance to your password_context, that can encrypt and decrypt your password, verify them etc.
 password_context = CryptContext(schemes=["bcrypt"], deprecated="auto")
-oauth2_scheme = OAuth2PasswordBearer(tokenUrl="/user/login/token")
+oauth2_scheme = OAuth2PasswordBearer(tokenUrl="/user/login")
 
 # ---- HASHING PASSWORDS ---- 
 def get_hashed_password(password: str) -> str:
