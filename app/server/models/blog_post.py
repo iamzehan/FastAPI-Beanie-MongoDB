@@ -5,7 +5,7 @@ from typing import Optional
 class Article(Document):
     title: str
     content: str
-    date: Optional[datetime] = datetime.now()
+    date: Optional[datetime]
     author: str
     
     class Settings:
