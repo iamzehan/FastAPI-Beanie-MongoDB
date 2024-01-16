@@ -1,7 +1,7 @@
 from typing import Optional
 from beanie import Document
+from fastapi.security import OAuth2PasswordRequestForm
 from pydantic import EmailStr, BaseModel
-
 
 
 class User(Document):
@@ -45,6 +45,6 @@ class UserSignUp(BaseModel):
     
     password : str
     
-class UserLogin(BaseModel):
+class UserLogin(OAuth2PasswordRequestForm):
     username: str
     password: str
