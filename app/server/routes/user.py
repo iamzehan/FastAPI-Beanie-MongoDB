@@ -3,8 +3,8 @@ from typing import Annotated
 from fastapi import Depends, HTTPException, status, APIRouter, Form
 from fastapi.security import OAuth2PasswordRequestForm
 from uuid import uuid4
-from auth.user import User, UserLogin, UserSignUp, UserInDB
-from auth.token_model import Token
+from app.auth.auth_user import User, UserLogin, UserSignUp, UserInDB
+from app.auth.auth_token import Token
 from auth.auth_handler import(
     authenticate_user,
     get_current_active_user ,
