@@ -39,10 +39,11 @@ async def read_a_blog(id: PydanticObjectId) -> Article:
     return blog
 
 @router.post("/comments/create/")
-async def add_a_comment(comment: Comments) -> dict:
-    post = await comment.create()
+async def add_a_comment(current_user: Annotated[User, Depends(get_current_active_user)], article_id=Form(...), content=Form(...)) -> dict:
+    comment = Comments(article_id=PydanticObjectId(article_id), content=content, date=datetime.now(), owner=current_user.username)
+    comment_post = await comment.create()
     return {"message": "Comment posted successfully!",
-            "comment": post}
+            "comment": comment_post}
     
 @router.get("/comments/read/article_id={article_id}")
 async def read_all_comments(article_id: str) -> List[Comments]:
