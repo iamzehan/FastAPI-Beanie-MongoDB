@@ -56,31 +56,40 @@ Registers and handles urls and runs the FastAPI instance.
 ___
 Handles the connection with the database and as well as all the interactions between MongoDB server and the FastAPI server.
 
-## <img src="https://upload.wikimedia.org/wikipedia/commons/2/20/Bash_Logo_black_and_white_icon_only.svg" alt="html5" width="40" height="40" style="vertical-align: middle;"/>  Installation
+<h2 align = "center"> <img src="https://github.com/iamzehan/FastAPI-Beanie-MongoDB/assets/43857150/1965d7c4-ae5d-46b9-8c5e-fae7466ec91e" alt="html5" width="30" height="30" style="vertical-align: middle;"/> Setting up the Development Environment </h2>
 
-<img src="https://upload.wikimedia.org/wikipedia/commons/2/20/Bash_Logo_black_and_white_icon_only.svg" alt="html5" width="20" height="20" style="vertical-align: middle;"/> Create Virtual Environment
-
-```bash
-$ virtualenv env
-```
-<img src="https://upload.wikimedia.org/wikipedia/commons/2/20/Bash_Logo_black_and_white_icon_only.svg" alt="html5" width="20" height="20" style="vertical-align: middle;"/> Activate `env`
+<img src="https://github.com/iamzehan/FastAPI-Beanie-MongoDB/assets/43857150/1965d7c4-ae5d-46b9-8c5e-fae7466ec91e" alt="html5" width="20" height="20" style="vertical-align: middle;"/> Create Virtual Environment
 
 ```bash
-$ source env/Scripts/activate
+virtualenv env
 ```
-
-<img src="https://upload.wikimedia.org/wikipedia/commons/2/20/Bash_Logo_black_and_white_icon_only.svg" alt="html5" width="20" height="20" style="vertical-align: middle;"/> Install requirements 
+<img src="https://github.com/iamzehan/FastAPI-Beanie-MongoDB/assets/43857150/1965d7c4-ae5d-46b9-8c5e-fae7466ec91e" alt="html5" width="20" height="20" style="vertical-align: middle;"/> Activate `env`
 
 ```bash
-$ pip install -r requirements.txt
+source env/Scripts/activate
 ```
 
-<img src="https://upload.wikimedia.org/wikipedia/commons/2/20/Bash_Logo_black_and_white_icon_only.svg" alt="html5" width="20" height="20" style="vertical-align: middle;"/> Run the project
+<img src="https://github.com/iamzehan/FastAPI-Beanie-MongoDB/assets/43857150/1965d7c4-ae5d-46b9-8c5e-fae7466ec91e" alt="html5" width="20" height="20" style="vertical-align: middle;"/> Install requirements 
+
+```bash
+pip install -r requirements.txt
+```
+
+<img src="https://github.com/iamzehan/FastAPI-Beanie-MongoDB/assets/43857150/1965d7c4-ae5d-46b9-8c5e-fae7466ec91e" alt="html5" width="20" height="20" style="vertical-align: middle;"/> Run the project
 
 ```bash
 python app/main.py
 ```
+or 
+
+```powershell
+$ cd app/server
+
+$ uvicorn app:app --reload
+```
+
 <h3 align="center"> Technologies & Links </h3>
+
 
 ___
 
